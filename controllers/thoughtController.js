@@ -28,7 +28,7 @@ module.exports = {
         try{
             const thought = await Thought.create(req.body);
             const user = await User.findOneAndUpdate(
-                { _id: req.body.userId},
+                { username: req.body.username},
                 { $addToSet: {thoughts: thought._id }},
                 { new: true }
             );
@@ -64,7 +64,7 @@ module.exports = {
 
     async deleteThought(req, res) {
         try {
-            const thought = await Thought.findOneAndRemove({_id: req.params.thoughtId});
+            const thought = await Thought.findOneAndDelete({_id: req.params.thoughtId});
 
             if (!thought) {
                 return res.status(404).json({message: 'No thoughts with this id'});
@@ -82,6 +82,7 @@ module.exports = {
 
             res.json({ message: 'Thought successfully deleted'});
         } catch (err) {
+            console.log(err);
             res.status(500).json(err);
         }
     },
