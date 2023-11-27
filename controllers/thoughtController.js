@@ -1,6 +1,7 @@
 const { User, Thought } = require('../models');
 
 module.exports = {
+    // Get all thoughts
     async getThought(req, res) {
         try{
             const thoughts = await Thought.find();
@@ -10,6 +11,7 @@ module.exports = {
         }
     },
 
+    // Get one thought by ID
     async getOneThought(req, res) {
         try {
             const thought = await Thought.findOne({_id: req.params.thoughtId}).select('-__v');
@@ -24,6 +26,7 @@ module.exports = {
         }
     },
 
+    // Create a thought, also adds the thought ID to the user adding the thought
     async createThought(req, res) {
         try{
             const thought = await Thought.create(req.body);
@@ -44,6 +47,7 @@ module.exports = {
         }
     },
 
+    // Update a thought by thought ID
     async updateThought(req, res) {
         try {
             const thought = await Thought.findOneAndUpdate(
@@ -62,6 +66,7 @@ module.exports = {
         }
     },
 
+    //Delete a thought, also removes the thought from the User document
     async deleteThought(req, res) {
         try {
             const thought = await Thought.findOneAndDelete({_id: req.params.thoughtId});
@@ -87,6 +92,7 @@ module.exports = {
         }
     },
 
+    // Creates a document and adds it to the thought array as a Sub document
     async addReaction(req, res) {
         try {
             const thought = await Thought.findOneAndUpdate(
@@ -105,6 +111,7 @@ module.exports = {
         }
     },
 
+    // Removes a reaction subdocument from a thought.
     async removeReaction (req, res) {
         try {
             const thought = await Thought.findOneAndUpdate(

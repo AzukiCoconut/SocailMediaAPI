@@ -1,5 +1,7 @@
 const { Schema, Types } = require('mongoose');
+const dayjs = require('dayjs');
 
+// Reaction schema will not be a Model but a subdocument of the Thoughts model
 const reactionSchema = new Schema(
     {
         reactionId: {
@@ -18,7 +20,7 @@ const reactionSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now,
-            get: (date) => {
+            get: (date) => { // Uses Dayjs to format the date upon query for display
                 if (date) return dayjs(date).format('MMMM DD, YYYY') + ' at ' + dayjs(date).format('h:m a');
             },
         },
