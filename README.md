@@ -20,11 +20,11 @@ Much of the code was developed with the help of the exercise files from Week 18 
 
 The following are additional resources I used to assist in the development of this application:
 
-    - MongoDB Fundamentals - https://www.mongodb.com/docs/drivers/node/current/fundamentals/
-    - Mongoose Guides - https://mongoosejs.com/docs/guides.html
-    - Dayjs - https://day.js.org/docs/en/display/format
-    - Date format getters - https://stackoverflow.com/questions/50633696/mongoose-getters-not-working-on-arrays
-                          \- https://stackoverflow.com/questions/70724966/how-to-use-getter-or-setter-with-mongoose-timestamps
+ - MongoDB Fundamentals - https://www.mongodb.com/docs/drivers/node/current/fundamentals/
+ - Mongoose Guides - https://mongoosejs.com/docs/guides.html
+ - Dayjs - https://day.js.org/docs/en/display/format
+ - Date format getters - https://stackoverflow.com/questions/50633696/mongoose-getters-not-working-on-arrays
+ - Date format getters - https://stackoverflow.com/questions/70724966/how-to-use-getter-or-setter-with-mongoose-timestamps
 
 ## License
 
